@@ -6,10 +6,16 @@ package com.harry.dagger2demo2.simple1.model;
  */
 public class User {
     private String userName = "harry";
-    private String imgUrl = "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=838427587,597146901&fm=27&gp=0.jpg";
+    private String imgUrl = "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=838427587," +
+            "597146901&fm=27&gp=0.jpg";
 
-    //@Inject
     public User() {
+
+    }
+
+    public User(String userName, String imgUrl) {
+        this.userName = userName;
+        this.imgUrl = imgUrl;
     }
 
     @Override

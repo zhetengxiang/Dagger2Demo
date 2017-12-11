@@ -11,8 +11,16 @@ import dagger.Provides;
  */
 @Module
 public class MainModule {
+    private String userName;
+    private String imgUrl;
+
+    public MainModule(String userName, String imgUrl) {
+        this.userName = userName;
+        this.imgUrl = imgUrl;
+    }
+
     @Provides
-    public User provideUser(){
-        return new User();
+    public User provideUser() {
+        return new User(userName, imgUrl);
     }
 }
