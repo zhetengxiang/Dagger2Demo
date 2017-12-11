@@ -1,9 +1,9 @@
 package com.harry.dagger2demo2.simple1.module;
 
 import com.harry.dagger2demo2.simple1.model.User;
+import com.harry.dagger2demo2.simple1.scope.AppScope;
 
 import javax.inject.Named;
-import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -13,25 +13,25 @@ import dagger.Provides;
  * Created by ybxiang on 2017-12-11.
  */
 @Module
-public class MainModule {
+public class AppModule {
     private String userName;
     private String imgUrl;
 
-    public MainModule(String userName, String imgUrl) {
+    public AppModule(String userName, String imgUrl) {
         this.userName = userName;
         this.imgUrl = imgUrl;
     }
 
-    @Singleton
+    @AppScope
     @Provides
     public User provideUser() {
         return new User(userName, imgUrl);
     }
-
     /**
      * 大牛
      */
     @Named("ox")
+    @AppScope
     @Provides
     public User provideOX() {
         return new User("OX", "OX Avatar");
@@ -41,6 +41,7 @@ public class MainModule {
      * 小菜鸟
      */
     @Named("bird")
+    @AppScope
     @Provides
     public User provideBird() {
         return new User("Bird", "Bird Avatar");
