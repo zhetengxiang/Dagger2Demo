@@ -37,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
                 .getInstance().getAppComponent()).build().inject(this);
         Log.d(TAG, "mUser = " + mUser);
         Log.d(TAG, "mUser2 = " + mUser2);
-//        Log.d(TAG, "mOXUser = " + mOXUser);
-//        Log.d(TAG, "mBirdUser = " + mBirdUser);
+
+        Log.d(TAG, "mOXUser = " + mOXUser);
+        Log.d(TAG, "mBirdUser = " + mBirdUser);
     }
 
     public void onToSecond(View view) {

@@ -10,6 +10,7 @@ import com.harry.dagger2demo2.simple1.model.User;
 import com.harry.dagger2demo2.simple1.module.ActivityModule;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  * 第二个界面
@@ -23,14 +24,27 @@ public class SecondActivity extends AppCompatActivity {
     @Inject
     User mUser2;
 
+
+    @Named("ox")
+    @Inject
+    User mOXUser;
+
+    @Named("bird")
+    @Inject
+    User mBirdUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         DaggerActivityComponent.builder().activityModule(new ActivityModule()).appComponent(MyApplication
                 .getInstance().getAppComponent()).build().inject(this);
-
+//
         Log.d(TAG, "mUser = " + mUser);
         Log.d(TAG, "mUser2 = " + mUser2);
+
+
+        Log.d(TAG, "mOXUser = " + mOXUser);
+        Log.d(TAG, "mBirdUser = " + mBirdUser);
     }
 }

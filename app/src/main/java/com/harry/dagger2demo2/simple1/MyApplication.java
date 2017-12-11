@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.harry.dagger2demo2.simple1.component.AppComponent;
 import com.harry.dagger2demo2.simple1.component.DaggerAppComponent;
+import com.harry.dagger2demo2.simple1.module.AppModule;
 
 /**
  * 自定义Application
@@ -21,7 +22,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         mApplication = this;
-        mAppComponent = DaggerAppComponent.create();
+        mAppComponent = DaggerAppComponent.builder().appModule(new AppModule("lilei","lilei avatart")).build();
         mAppComponent.inject(this);
     }
 
