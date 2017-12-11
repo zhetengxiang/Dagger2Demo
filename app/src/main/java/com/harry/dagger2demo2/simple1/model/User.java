@@ -18,11 +18,11 @@ public class User {
         this.imgUrl = imgUrl;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userName='" + userName + '\'' +
-                ", imgUrl='" + imgUrl + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "User{" +
+//                "userName='" + userName + '\'' +
+//                ", imgUrl='" + imgUrl + '\'' +
+//                '}';
+//    }
 }
