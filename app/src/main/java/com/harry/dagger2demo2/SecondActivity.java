@@ -5,9 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.harry.dagger2demo2.simple1.MyApplication;
-import com.harry.dagger2demo2.simple1.component.DaggerActivityComponent;
 import com.harry.dagger2demo2.simple1.model.User;
-import com.harry.dagger2demo2.simple1.module.ActivityModule;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -37,9 +35,11 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        DaggerActivityComponent.builder().activityModule(new ActivityModule()).appComponent(MyApplication
-                .getInstance().getAppComponent()).build().inject(this);
-//
+//        DaggerActivityComponent.builder().activityModule(new ActivityModule()).appComponent(MyApplication
+//                .getInstance().getAppComponent()).build().inject(this);
+////
+        MyApplication.getInstance().getAppComponent().getActivityComponent().inject(this);
+
         Log.d(TAG, "mUser = " + mUser);
         Log.d(TAG, "mUser2 = " + mUser2);
 

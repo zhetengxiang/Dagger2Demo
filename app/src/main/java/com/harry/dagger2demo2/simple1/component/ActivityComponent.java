@@ -5,7 +5,7 @@ import com.harry.dagger2demo2.SecondActivity;
 import com.harry.dagger2demo2.simple1.module.ActivityModule;
 import com.harry.dagger2demo2.simple1.scope.ActivityScope;
 
-import dagger.Component;
+import dagger.Subcomponent;
 
 /**
  * 连接器
@@ -14,7 +14,7 @@ import dagger.Component;
  * Created by ybxiang on 2017-12-11.
  */
 @ActivityScope
-@Component(modules = {ActivityModule.class},dependencies = {AppComponent.class})
+@Subcomponent(modules = {ActivityModule.class})
 public interface ActivityComponent {
     void inject(MainActivity activity);
     void inject(SecondActivity activity);
