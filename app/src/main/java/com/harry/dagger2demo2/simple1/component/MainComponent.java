@@ -1,6 +1,7 @@
-package com.harry.dagger2demo2.simple1;
+package com.harry.dagger2demo2.simple1.component;
 
 import com.harry.dagger2demo2.MainActivity;
+import com.harry.dagger2demo2.simple1.module.MainModule;
 
 import dagger.Component;
 
@@ -9,7 +10,7 @@ import dagger.Component;
  * 1. 声明都是接口
  * Created by ybxiang on 2017-12-11.
  */
-@Component
+@Component(modules = {MainModule.class})
 public interface MainComponent {
     void inject(MainActivity activity);
 }
